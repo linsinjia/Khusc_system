@@ -4,27 +4,35 @@ class index2 extends CI_Model{
 	{
 		parent::__construct();
 	}
+	//studata 資料庫 year / stu_name / stu_ID / teacher
+	//100a stuid / name / fbname / email
+	
 	function get_data_year(){
-		$sql = "SELECT * FROM studata WHERE year LIKE '$textbox%';";
-		//$sql = "SELECT * FROM studata";
-		//$query = $this->db->get_where('studata',%$textbox%);
+		$textbox=$this->input->post('conditiontext');
+		//$sql=$this->db->like('year', '$textbox', 'both');
+		$sql = "SELECT * FROM 100a WHERE stuid LIKE '%$textbox%';";
 		$query=$this->db->query($sql);
 		return $query->result();
 	}
+	
 	function get_data_stuname(){
-		$sql = "SELECT * FROM studata WHERE stu_name LIKE '%$textbox%';";
+		$textbox=$this->input->post('conditiontext');
+		$sql = "SELECT * FROM 100a WHERE name LIKE '%$textbox%';";
 		$query=$this->db->query($sql);
 		return $query->result();
 	}
 	function get_data_stuid(){
-		$sql = "SELECT * FROM studata WHERE stu_id LIKE '%$textbox%';";
+		$textbox=$this->input->post('conditiontext');
+		$sql = "SELECT * FROM 100a WHERE fbname LIKE '%$textbox%';";
 		$query=$this->db->query($sql);
 		return $query->result();		
 	}
 	function get_data_teacher(){
-		$sql = "SELECT * FROM studata WHERE teacher LIKE '%$textbox%';";
+		$textbox=$this->input->post('conditiontext');
+		$sql = "SELECT * FROM 100a WHERE email LIKE '%$textbox%';";
 		$query=$this->db->query($sql);
 		return $query->result();
 	}
+	
 }
 ?>
