@@ -1,4 +1,4 @@
-<form id="form1" name="form1" method="post" action="../Pages/search">
+<form id="form1" name="form1" method="post" align="center" action="../Pages/search">
   <p>
     <label>
       <input type="radio" name="condition" value="0" id="condition_0" />
@@ -19,4 +19,6 @@
     <input type="submit" name="submit1" id="submit1" value="送出" />
   </p>
 </form>
+<?php
+?>
 
